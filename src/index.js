@@ -9,7 +9,7 @@ const morgan = require('morgan');
 app.set('views', pathh.join(__dirname, 'views')); //ruta de la carpeta de vistas
 app.engine('motor-ejs', engine); //usar motor de plantilla
 app.set('view engine', 'motor-ejs');  
-app.set('port', process.env.PORT || 5000)
+app.set('port', process.env.PORT || 3000)
  
 //middlewares - Son funciones antes de pasar a las rutas
 app.use(morgan('dev'));

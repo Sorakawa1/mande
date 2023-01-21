@@ -1,0 +1,3 @@
+npm i passport-local
+npm i connect-flash
+npm i ejs-mate  
