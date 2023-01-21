@@ -12,6 +12,7 @@ router1.get('/registrar', (req, res, next) => {
 
 router1.post('/registrar', (req, res, next) => {
     console.log(req.body);
+    console.log(req.body);
     res.send('Ingresados correctamente');
 })
 
