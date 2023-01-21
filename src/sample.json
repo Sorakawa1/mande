@@ -1,0 +1,28 @@
+[
+    {
+        "id": "1",
+        "title":"MIB",
+        "year":"2000",
+        "director":"JAMES",
+        "rating":"4.25"
+        
+    },
+    {
+        "id": "2",
+        "title":"mougly",
+        "year":"2000",
+        "director":"JS",
+        "rating":"4.5"
+    },
+    {
+        "id": "3",
+        "title":"las avispas",
+        "year":"2020",
+        "director":"JESUS",
+        "rating":"4.0"
+    }
+
+
+
+
+]

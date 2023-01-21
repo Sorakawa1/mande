@@ -17,6 +17,7 @@ app.use(express.urlencoded({extended: false}));
 
 //Rutas
 app.use('/', require('./routes/princ'))
+app.use('/api/client',require('./routes/client'));
 
 
 //EMPIEZA EL SERVIDOR
