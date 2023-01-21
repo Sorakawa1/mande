@@ -1,2 +1,38 @@
-<h2>MENSAJE DE PRUEBA</h2>
-<button type="button"><a href="/registrar">Ingresar a</a></button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div className="container py-5 h-100">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+                <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div className="card-body p-3 text-center card bg-dark text-white">
+                        <form className="">
+                            <h1 className="fw-bold mb-2 text-uppercase">Login</h1>
+                            <div className="">
+                                <label className="col-sm-2 col-form-label">Usuario</label>
+                                <div className="form-control-lg">
+                                    <input type="email" name="email" placeholder="ingresa tu usuario"/>
+                                </div>
+                            </div>
+                            <div className="">
+                                <label className="col-sm-3 col-form-label">Contraseña</label>
+                                <div className="form-control-lg">
+                                    <input type="password" name="password" placeholder="ingresa tu contrase"/>
+                                </div>
+                            </div>
+                            <div className="pt-3"> 
+                                <input type="submit" className="btn btn-outline-light btn-lg px-5"value="Ingresar">
+                            </div>
+                            <div><button type="submit"><a href="/registrar">Registro</a></button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
