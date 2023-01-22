@@ -1,0 +1,38 @@
+body {
+  
+  font: 40px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-left: 36%;
+  width: 300px;
+  height: 100px;
+  margin-top: 12%;
+  background-image: url("https://img.freepik.com/vector-gratis/escena-dibujos-animados-renovacion-trabajadores-instalando-ventanas-haciendo-ilustraciones-vectores-piso_1284-77330.jpg?w=900&t=st=1673801234~exp=1673801834~hmac=1a70d82a6d8af3ed331688f7ca5f7351e25b9b23a91e5501ad874e4b5a54ba4e");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 110%;
+  color: WHITE;
+ 
+
+}
+
+
+p {
+  font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-top: 0PX;
+  color: hsl(0, 0%, 0%);
+  margin-bottom: 0PX;
+  margin-left: -5%;
+
+ 
+}
+button{
+  margin-left: 25%;
+
+  width: 100px;
+  color:#1b0101;
+}
+
+button:hover {
+  background-color:#0f1ee7;
+
+  
+  }

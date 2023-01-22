@@ -2,3 +2,6 @@ npm i passport-local
 npm i connect-flash
 npm i ejs-mate  
 npm i underscore
+npm i basic-auth
+nm i body-parser
+npm i pug

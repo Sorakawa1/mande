@@ -12,7 +12,7 @@ CREATE TABLE usuario
     nombre character(100),
     apellido character(100),
     correo character(100),
-    contraseña character(100),
+    contrasena character(100),
     ubicacion character(100), 
     doc_ruta varchar NOT NULL,
     es_cliente boolean,
@@ -215,3 +215,14 @@ INSERT INTO servicio VALUES
     1,	
     4
 );
+
+create view CLIENTEVIEW as 
+Select nombre,celular, contrasena FROM USUARIO WHERE es_cliente= true AND usuario_activo = true;
+
+create view TRABAJADORVIEW as 
+Select nombre,celular, contrasena FROM USUARIO WHERE es_cliente != true AND usuario_activo = true;
+
+UPDATE usuario set usuario_activo=true where celular='3167895779';
+select * from usuario;
+
+select * from TRABAJADORview;
