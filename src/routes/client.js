@@ -2,7 +2,7 @@ const {Router}= require('express');
 const router = Router();
 const _ =require('underscore');
 
-const {getClient,editClient,getClienteByCel}= require('../controller/client.controller');
+const {getClient,editClient,getClienteByCel,createClient}= require('../controller/client.controller');
 
 //esta es el modelo para user, aqui encontrara el nombre de los metodos para el crud, 
 //los cuales se encuentran en el archivo user.controller.js (dento de controller)
@@ -14,18 +14,7 @@ router.get('/',getClient);
 router.get('/:celular',getClienteByCel);
 
 
-router.post('/',(req,res)=>{
-    const{title,director,year, rating}= req.body;
-    if(title && director && year && rating){
-        const id=movies.length+1;
-        const newmovie= {...req.body, id};
-        console.log(newmovie);
-        movies.push(newmovie);
-        res.json(movies);
-    }else{ 
-        res.status(500).json({error:'wrong request'});
-    }
-});
+router.post('/', createClient);
 
 router.delete('/:id',(req,res)=>{
     const {id}= req.params;

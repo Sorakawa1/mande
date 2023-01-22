@@ -4,6 +4,7 @@ const engine = require('ejs-mate');
 const pathh = require('path');
 const app = express();
 const morgan = require('morgan');
+const bodyParser = require('body-parser')
 
 //OPCIONES 
 app.set('views', pathh.join(__dirname, 'views')); //ruta de la carpeta de vistas
@@ -14,6 +15,8 @@ app.set('port', process.env.PORT || 3000)
 //middlewares - Son funciones antes de pasar a las rutas
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.json()) // para procesar datos enviados en formato JSON
+app.use(bodyParser.urlencoded({ extended: true })) // para procesar datos enviados en formato URL-encoded
 
 //Rutas
 app.use('/', require('./routes/princ'))
