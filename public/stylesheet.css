@@ -1,0 +1,61 @@
+body{
+  background-image: url("fondor.jpg"); /*CONFIGURACION RESPONSIVE*/
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.contenerPrincipal{
+  border-radius: 15px;
+  width: 440px;
+  margin: 100px auto;
+  background-color:rgb(22, 21, 21);
+  padding: 20px 20px 70px 20px;
+  border: 3px solid snow;
+  text-align:center;
+}
+
+.contener2{
+  border-radius: 15px;
+  width: 400px;
+  margin: 100px auto;
+  background-color:rgb(22, 21, 21);
+  padding: 20px 20px 20px 20px;
+  border: 3px solid snow;
+  text-align:center;
+}
+
+/*Alinear placeholder de los input text*/
+#center::placeholder{
+  text-align: center;
+}
+
+.campotext1{
+  border-radius: 5px;
+  border: 0;
+  width: 80%;
+}
+
+.titulo1{
+  color:rgb(20, 180, 243);
+  text-align: center;
+}
+
+
+.btn-primary:hover{
+  background-color: #55e429;
+  color: rgb(76, 0, 255);
+}
+
+.btn-me2:hover{
+  background-color: #d18a20;
+  color: rgb(187, 255, 0);
+}
+
+.botoncliente{
+  float: left;
+}
+.botontrabajador{
+  float: right;
+}
+

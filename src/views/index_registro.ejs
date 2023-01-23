@@ -1,0 +1,20 @@
+<%- include('../views/layouts/main_log_reg.ejs'); %>
+<div>
+    <div>
+        <h1>Registro Usuarios</h1>
+    </div>
+    <form action="./registrar" method="POST">
+        <div>
+        <input type="email" name="email" placeholder="ingresa tu usuario"/>
+        </div>
+        <div>
+        <input type="password" name="password" placeholder="ingresa tu contrase"/>
+        </div>
+        <div>
+        <input type="text" name="numero" placeholder="ingresa"/>
+        </div>
+        <div>
+        <input type="submit" value="ingresar"/>
+        </div>
+    </form>
+</div>

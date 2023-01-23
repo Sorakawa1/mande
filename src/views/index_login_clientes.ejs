@@ -1,0 +1,26 @@
+<%- include('../views/layouts/main_log_reg.ejs'); %>
+<div class="container contener2">
+    <form className="">
+        <h1 class="titulo1">Bienvenido Usuario</h1>
+            <div className="">
+                <h5 class="text-warning">Usuario</h5>
+                    <div class="">
+                        <input type="email" name="email" id="center" placeholder="ingresa tu usuario" class="campotext1"/>
+                    </div>
+            </div>
+            <div class="">
+                <h5 class="text-warning">Contraseña</h5>
+                    <div className="">
+                        <input type="password" name="password" id="center" placeholder="ingresa tu contraseña" class="campotext1"/>
+                    </div>
+            </div>
+            <div className=""> 
+                <input type="submit" class="btn btn-success"value="Ingresar">
+            </div>
+            <div>
+                <a href="/registrar">
+                    <input type="button" class="btn btn-danger" value="Registrar cliente">
+                </a>
+            </div>
+    </form>
+</div>
