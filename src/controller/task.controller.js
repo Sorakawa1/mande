@@ -35,7 +35,8 @@ const getTaskByName = async(req,res) => {
 const updateTask = async(req,res) => {
 try
     { 
-        const rest= await pool.query('UPDATE labor SET nombre=$1, descripcion=$2, tipo_unidad=$3 WHERE labor_id=$4 ',
+        const rest= await pool.query(`UPDATE labor SET nombre= COALESCE($1, nombre), 
+        descripcion=COALESCE($2, descripcion), tipo_unidad=COALESCE($3,tipo_unidad) WHERE labor_id=$4 `,
          [req.body.nombre,req.body.descripcion,req.body.tipo_unidad,req.params.labor_id]);
         res.send({message: 'Labor editada exitosamente'});
         //res.status(200).json({message: 'Cliente editado exitosamente'});

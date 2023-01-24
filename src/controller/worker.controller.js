@@ -33,15 +33,19 @@ const getWorkerByCel = async(req,res) => {
 }
 
 const updateWorker = async(req,res) => {
-    const celular = req.params.celular;
-    const {correo } = req.body;
-    //console.log(correo, celular);
-    const response = await pool.query('UPDATE usuario SET correo=$1 WHERE celular=$2', [
-        correo,
-        celular
-    ]);
-    console.log(response);
-    res.json('Usuario actualizado correctamente');
+    try
+    { 
+        const rest= await pool.query(`UPDATE usuario set nombre= COALESCE($1, nombre), apellido= 
+        COALESCE($2, apellido), correo= COALESCE($3, correo), contrasena= COALESCE($4, contrasena), 
+        ubicacion= COALESCE($5, ubicacion) WHERE celular=$6`, [req.body.nombre,req.body.apellido,
+            req.body.correo,req.body.contrasena,
+            req.body.ubicacion,req.params.celular]);
+        res.send({message: 'Trabajador editado exitosamente'});
+        //res.status(200).json({message: 'Cliente editado exitosamente'});
+    }
+    catch(e){
+        ('ERROR DE CELULAR').concat(console.log(e));
+    }
     
 }
 

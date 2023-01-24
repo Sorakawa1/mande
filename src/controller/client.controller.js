@@ -108,7 +108,11 @@ const editClient = async(req,res) => {
 
     try
     { 
-        const rest= await pool.query('UPDATE usuario set nombre=$1, contrasena= COALESCE($2, contrasena) WHERE celular=$3 ', [req.body.nombre,req.body.contrasena,req.params.celular]);
+        const rest= await pool.query(`UPDATE usuario set nombre= COALESCE($1, nombre), apellido= 
+        COALESCE($2, apellido), correo= COALESCE($3, correo), contrasena= COALESCE($4, contrasena), 
+        ubicacion= COALESCE($5, ubicacion) WHERE celular=$6`, [req.body.nombre,req.body.apellido,
+            req.body.correo,req.body.contrasena,
+            req.body.ubicacion,req.params.celular]);
         res.send({message: 'Cliente editado exitosamente'});
         //res.status(200).json({message: 'Cliente editado exitosamente'});
     }
