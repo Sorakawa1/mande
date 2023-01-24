@@ -69,6 +69,8 @@ app.use('/api/client',require('./routes/client'));
 app.use('/api/apiexterna', require('./routes/apiexterna'));
 app.use('/', indexRouter);
 app.use('/api/worker',require('./routes/worker'));
+app.use('/api/task',require('./routes/task'));
+
 
 //EMPIEZA EL SERVIDOR
 app.listen(app.get('port'), () => {
