@@ -15,21 +15,32 @@ router1.get('/login_cliente', (req, res, next) => {
     res.render('index_login_clientes.ejs');
 })
 
-router1.get('/login_trabajador', (req, res, next) => {
+router1.get('/login_t', (req, res, next) => {
     res.render('index_login_trabajador.ejs');
 })
 //
 
-
-router1.get('/registrar', (req, res, next) => {
-    res.render('index_registro.ejs');  
+//Registro cliente
+router1.get('/registrar_cliente', (req, res, next) => {
+    res.render('index_registro_clientes.ejs');  
 })
 
-router1.post('/registrar', (req, res, next) => {
-    console.log(req.body);
+router1.post('/registrar_cliente', (req, res, next) => {
     console.log(req.body);
     res.send('Ingresados correctamente');
 })
+////
+
+//Registro Trabajador
+router1.get('/registrar_trabajador', (req, res, next) => {
+    res.render('index_registro_trabajo.ejs');  
+})
+
+router1.post('/registrar_trabajador', (req, res, next) => {
+    console.log(req.body);
+    res.send('Bienvenido esclavo');
+})
+////
 
 router1.get('/categoria', (req, res, next) => {
     res.render('categorias.ejs');

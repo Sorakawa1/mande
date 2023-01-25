@@ -1,24 +1,26 @@
 <%- include('../views/layouts/main_log_reg.ejs'); %>
-<div class="container">
+<div class="container contenerlogcli col-12 col-md-6 col-lg-3">
     <form className="">
-        <h1 className="">Bienvenido Trabajador</h1>
-            <div className="">
-                <label className="">Usuario</label>
+        <h1 class="tituloGrande">Bienvenido Trabajador</h1>
+            <div class="salto_cajas">
+                <h5 class="text-warning">Usuario</h5>
                     <div className="">
-                        <input type="email" name="email" placeholder="ingresa tu usuario"/>
+                        <input type="email" name="email" placeholder="ingresa tu usuario" id="center" class="campotext1"/>
                     </div>
             </div>
-            <div className="">
-                <label className="">Contraseña</label>
+            <div class="">
+                <h5 class="text-warning">Contraseña</h5>
                     <div className="">
-                        <input type="password" name="password" placeholder="ingresa tu contrasena"/>
+                        <input type="password" name="password" placeholder="ingresa tu contrasena" id="center" class="campotext1"/>
                     </div>
             </div>
-            <div className=""> 
-                <input type="submit" className=""value="Ingresar">
+            <div class="espaciobotones"> 
+                <input type="submit" class="btn btn-success tamanobotontra" value="Ingresar">
             </div>
-            <div>
-                <button type="submit"><a href="/registrar">Registro Trabajador</a></button>
+            <div class="espaciobotones">
+                <a href="/registrar_trabajador">
+                    <input type="button" class="btn btn-danger" value="Registrar Trabajador">
+                </a>
             </div>
     </form>
 </div>

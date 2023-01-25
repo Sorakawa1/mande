@@ -1,5 +1,5 @@
 body{
-  background-image: url("fondor.jpg"); /*CONFIGURACION RESPONSIVE*/
+  background-image: url("fondor.jpg"); /*CONFIGURACION RESPONSIVE IMAGEN BODY*/
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,16 +15,35 @@ body{
   text-align:center;
 }
 
-.contener2{
+.contenerreg{
   border-radius: 15px;
   width: 400px;
-  margin: 100px auto;
+  margin-top: 3em;
   background-color:rgb(22, 21, 21);
   padding: 20px 20px 20px 20px;
   border: 3px solid snow;
   text-align:center;
 }
 
+.contenerlogcli {
+  border-radius: 15px;
+  width: 400px;
+  margin-top: 5em;
+  background-color:rgb(22, 21, 21);
+  padding: 20px 20px 20px 20px;
+  border: 3px solid snow;
+  text-align:center;
+}
+
+.contenerregtra {
+  border-radius: 15px;
+  width: 400px;
+  margin-top: 2em;
+  background-color:rgb(22, 21, 21);
+  padding: 20px 20px 20px 20px;
+  border: 3px solid snow;
+  text-align:center;
+}
 /*Alinear placeholder de los input text*/
 #center::placeholder{
   text-align: center;
@@ -36,11 +55,10 @@ body{
   width: 80%;
 }
 
-.titulo1{
+.tituloGrande{
   color:rgb(20, 180, 243);
   text-align: center;
 }
-
 
 .btn-primary:hover{
   background-color: #55e429;
@@ -59,3 +77,24 @@ body{
   float: right;
 }
 
+.espaciobotones{
+  padding-top: 15px;
+}
+
+.salto_cajas{
+  padding-bottom: 10px;
+}
+
+.tamanobotoncli{
+  width: 180px;
+}
+
+.tamanobotontra{
+  width: 220px;
+}
+
+.salto_linea{
+  display: block;
+  padding: 1em 1em 1em 1em;
+
+}

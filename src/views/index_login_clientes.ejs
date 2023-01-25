@@ -1,8 +1,8 @@
 <%- include('../views/layouts/main_log_reg.ejs'); %>
-<div class="container contener2">
+<div class="container contenerlogcli col-12 col-md-6 col-lg-3">
     <form className="">
-        <h1 class="titulo1">Bienvenido Usuario</h1>
-            <div className="">
+        <h1 class="tituloGrande">Bienvenido Usuario</h1>
+            <div class="salto_cajas">
                 <h5 class="text-warning">Usuario</h5>
                     <div class="">
                         <input type="email" name="email" id="center" placeholder="ingresa tu usuario" class="campotext1"/>
@@ -14,11 +14,11 @@
                         <input type="password" name="password" id="center" placeholder="ingresa tu contraseña" class="campotext1"/>
                     </div>
             </div>
-            <div className=""> 
-                <input type="submit" class="btn btn-success"value="Ingresar">
+            <div class="espaciobotones"> 
+                <input type="submit" class="btn btn-success tamanobotoncli" value="Ingresar">
             </div>
-            <div>
-                <a href="/registrar">
+            <div class="espaciobotones">
+                <a href="/registrar_cliente">
                     <input type="button" class="btn btn-danger" value="Registrar cliente">
                 </a>
             </div>
