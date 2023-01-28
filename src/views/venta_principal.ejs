@@ -1,0 +1,30 @@
+<%- include('../views/layouts/main_cliente.ejs'); %>
+<div class="container col-12 col-md-6 col-lg-3">
+  <h2>Calificaciones</h2>
+    <ul>
+      <li>
+        <h3>Empresa A</h3>
+        <form>
+          <label for="rating">Calificación:</label>
+          <select id="rating" name="rating">
+            <option value="1">1 estrella</option>
+            <option value="2">2 estrellas</option>
+            <option value="3">3 estrellas</option>
+            <option value="4">4 estrellas</option>
+            <option value="5">5 estrellas</option>
+          </select>
+          <br>
+          <label for="comments">Comentarios:</label>
+          <textarea id="comments" name="comments"></textarea>
+          <br>
+          <input type="submit" value="Enviar calificación">
+        </form>
+      </li>
+      <li>
+        <h3>Empresa B</h3>
+        <div class="rating">3 estrellas</div>
+        <p>Comentarios: Buen servicio, pero un poco caro.</p>
+      </li>
+    </ul>
+</div>
+  

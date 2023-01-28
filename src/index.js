@@ -26,6 +26,8 @@ app.use('/', require('./routes/clientes'));
 app.use('/', require('./routes/trabajadores'));
 app.use('/', require('./routes/perfil_cliente'));
 app.use('/', require('./routes/perfil_trabajador'));
+app.use('/', require('./routes/ventanaprincipal'));
+
 
 //EMPIEZA EL SERVIDOR
 app.listen(app.get('port'), () => {
