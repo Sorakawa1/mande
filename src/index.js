@@ -24,6 +24,8 @@ app.use(express.urlencoded({extended: false}));
 app.use('/', require('./routes/login'));
 app.use('/', require('./routes/clientes'));
 app.use('/', require('./routes/trabajadores'));
+app.use('/', require('./routes/perfil_cliente'));
+app.use('/', require('./routes/perfil_trabajador'));
 
 //EMPIEZA EL SERVIDOR
 app.listen(app.get('port'), () => {

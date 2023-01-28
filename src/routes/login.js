@@ -16,14 +16,4 @@ router1.get('/login_cliente', (req, res, next) => {
     res.render('index_login_clientes.ejs');
 })
 
-
-
-
-router1.get('/categoria', (req, res, next) => {
-    res.render('categorias.ejs')
-})
-
-router1.post('/categoria', (req, res, next) => {
-})
-
 module.exports = router1;
