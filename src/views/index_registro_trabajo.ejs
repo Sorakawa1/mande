@@ -1,44 +1,83 @@
 <%- include('../views/layouts/main_log_reg.ejs'); %>
 <div class="container contenerregtra col-12 col-md-6 col-lg-3">
     <div>
-        <h1 class="tituloGrande">Registro Clientes</h1>
+        <h1 class="tituloGrande">Registro Trabajador</h1>
     </div>
-    <form action="/registrar_cliente" method="POST">
-        <div>
-            <input type="text" name="nombre_cliente" placeholder="Nombre/s" id="center" class="campotext1"/>
-        </div>
-        
-        <div class="espaciobotones">
-            <input type="text" name="apellido_cliente" placeholder="Apellido/s" id="center" class="campotext1"/>
-        </div>
-        
-        <div class="espaciobotones">
-            <input type="email" name="email" placeholder="Correo Electronico" id="center" class="campotext1"/>
+    <form action="/registrar_trabajador" method="POST">
+        <div class="camposdatostrab">
+            <div>
+                <input type="text" name="nombre_cliente" placeholder="Nombre/s" id="center" class="campotext1"/>
+            </div>
+
+            <div class="espaciobotones">
+                <input type="text" name="apellido_cliente" placeholder="Apellido/s" id="center" class="campotext1"/>
+            </div>
+
+            <div class="espaciobotones">
+                <input type="email" name="email" placeholder="Correo Electronico" id="center" class="campotext1"/>
+            </div>
+
+            <div class="espaciobotones">
+                <input type="text" name="direccion" placeholder="Direccion" id="center" class="campotext1"/>
+            </div>
+
+            <div class="espaciobotones">
+                <input type="password" name="password" placeholder="Contraseña" id="center" class="campotext1"/>
+            </div>
+
+            <div class="espaciobotones">
+                <input type="password" name="password2" placeholder="Confirmar Contraseña" id="center" class="campotext1"/>
+            </div>
+
+            <div class="espaciobotones">
+                <input type="text" name="numero" placeholder="Telefono" id="center" class="campotext1"/>
+            </div>
+            <div class="espaciobotones">
+                <input type="file" class="tamanoboton"/>
+                <br> 
+                <input type="submit" name="enviarFoto" value="Subir foto" />   
+            </div>
         </div>
 
-        <div class="espaciobotones">
-            <input type="text" name="direccion" placeholder="Direccion" id="center" class="campotext1"/>
+        <!--CATEGORIAS LABORALES-->
+        <div class="categorias_">
+            <h3 class="tituloGrande">Selecciona un opcion:</h3> 
+            <div class="form-group alin1">
+                <label class="form-label mt-4 text-warning">Finanzas:</label>
+                    <select>
+                        <option></option>
+                        <option>Contador</option>
+                        <option>Analista de nomina</option>
+                    </select>
+            </div>
+            <div class="form-group alin2">
+                <label class="form-label mt-4 text-warning">Tecnologia:</label>
+                    <select>
+                        <option></option>
+                        <option>Auxiliar en sistemas</option>
+                        <option>Auxiliar en desarrollo web</option>
+                    </select>
+            </div>
+            <div class="form-group alin3">
+                <label class="form-label mt-4 text-warning">Oficios varios:</label>
+                    <select>
+                        <option></option>
+                        <option>Cocinero</option>
+                        <option>Aseo general</option>
+                    </select>
+            </div>
+            <div class="form-group alin4">
+                <label class="form-label mt-4 text-warning">Salud:</label>
+                    <select>
+                        <option></option>
+                        <option>Auxiliar en enfermeria</option>
+                        <option>Pediatra</option>
+                    </select>
+            </div>
         </div>
 
-        <div class="espaciobotones">
-            <input type="password" name="password" placeholder="Contraseña" id="center" class="campotext1"/>
-        </div>
-        
-        <div class="espaciobotones">
-            <input type="password" name="password2" placeholder="Confirmar Contraseña" id="center" class="campotext1"/>
-        </div>
-
-        <div class="espaciobotones">
-            <input type="text" name="numero" placeholder="Telefono" id="center" class="campotext1"/>
-        </div>
-        
-        <div class="espaciobotones">
+        <div class="enviar_trabajo">
             <input type="submit" value="Enviar" class="btn btn-success tamanoboton"/>
-        </div>
-        
-        <div class="espaciobotones">
-            <input type="file" class="tamanoboton"/> 
-            <input type="submit" name="enviarFoto" value="Subir imagen" />   
         </div>
     </form>
 </div>

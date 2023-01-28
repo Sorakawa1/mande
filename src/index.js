@@ -1,6 +1,7 @@
 //CODIGO DE SERVIDOR
 const express = require('express');
 const engine = require('ejs-mate');
+const ejs = require('ejs'); 
 const pathh = require('path');
 const morgan = require('morgan');
 const app = express();
@@ -20,7 +21,9 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 
 //Rutas
-app.use('/', require('./routes/princ'))
+app.use('/', require('./routes/login'));
+app.use('/', require('./routes/clientes'));
+app.use('/', require('./routes/trabajadores'));
 
 //EMPIEZA EL SERVIDOR
 app.listen(app.get('port'), () => {
