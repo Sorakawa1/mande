@@ -21,3 +21,33 @@ return resultado;
 }
 
 obtenerCat().then(res => {console.log(resultado)});
+
+
+<%- include('../views/layouts/main_cliente.ejs'); %>
+<div>
+  <form action="/" method="GET">
+    <input type="text" name="search" placeholder="Ingresa tu busqueda...">
+    <button type="submit">Buscar</button>
+  </form>
+    <h1>Resultados de búsqueda</h1>
+    <div id="resultado">
+      <% if (result.length > 0) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>prueb2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let i = 0; i < result.length; i++) { %>
+              <tr>
+                <td><%= result[i].prueb2 %></td>
+              </tr>
+            <% } %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <p>No results found</p>
+      <% } %>
+  </div>
+</div>

@@ -105,6 +105,27 @@ body{
   margin-left: 30%;
   margin-right: 30%;
 }
+
+.contenedorbusqueda{
+  flex: 1;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 2%;
+  margin-right: 30%;
+  margin-left: 30%;
+  background-color:rgb(22, 21, 21);
+  padding: 10px 10px 10px 10px;
+}
+
+.contendorcateg{
+  flex: 1;
+  border-radius: 15px;
+  margin-top: 1%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color:rgb(22, 21, 21);
+  padding: 10px 10px 10px 10px;
+}
 /*Alinear placeholder de los input text*/
 #center::placeholder{
   text-align: center;
@@ -119,6 +140,12 @@ body{
   border-radius: 5px;
   border: 0;
   width: 65%;
+}
+
+.campotextcateg{
+  border-radius: 5px;
+  border: 0;
+  width: 80%;
 }
 
 .textcalif{
@@ -165,6 +192,11 @@ body{
   text-align:left;
 }
 
+.iconoss{
+  padding-top: 25%;
+  text-align: center;
+}
+
 .gif{
   padding-top: 3%;
   text-align: center;
@@ -173,6 +205,15 @@ body{
 .gif img{
   width: 40%;
   border:1px solid saddlebrown; 
+}
+
+.gifload{
+  padding-top: 0.5%;
+  text-align: center;
+  max-width: 100%;
+}
+.gifload img{
+  width: 13%;
 }
 
 .nombretrabajador{

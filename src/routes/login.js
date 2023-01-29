@@ -20,4 +20,5 @@ router1.get('/login_cliente', (req, res, next) => {
     res.render('index_login_clientes.ejs');
 })
 
+
 module.exports = router1;
