@@ -27,6 +27,7 @@ app.use('/', require('./routes/trabajadores'));
 app.use('/', require('./routes/perfil_cliente'));
 app.use('/', require('./routes/perfil_trabajador'));
 app.use('/', require('./routes/ventanaprincipal'));
+app.use('/', require('./routes/ventanaprincipaltrabajo'));
 app.use('/', require('./routes/calificaciones'));
 
 
