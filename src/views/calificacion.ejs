@@ -1,0 +1,25 @@
+<%- include('../views/layouts/main_cliente.ejs'); %>
+<div class="container contendorcalif col-12 col-md-6 col-lg-3">
+  <h1 class="tituloGrande">Calificaciones</h1>
+    <h3 class="nombretrabajador">-Nombre del trabajador-</h3>
+      <form>
+        <div class="alincalif">
+          <label for="rating" class="form-label textcalif text-warning">Calificación:</label>
+          <br>
+          <select id="rating" name="rating">
+            <option value="1">1 estrella</option>
+            <option value="2">2 estrellas</option>
+            <option value="3">3 estrellas</option>
+            <option value="4">4 estrellas</option>
+            <option value="5">5 estrellas</option>
+          </select>
+        </div>
+        <div class="comentarioalig">
+          <label class="form-label textcalif text-warning">Comentarios:</label>
+          <br>
+          <textarea id="comments" name="comments"></textarea>
+        </div>
+          <br>
+          <input type="button" class="btn btn-primary" value="Enviar calificación">
+      </form>
+</div>

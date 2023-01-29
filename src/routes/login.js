@@ -7,6 +7,10 @@ router1.get('/', (req, res, next) => {
     res.render('principal.ejs');
 })
 
+router1.get('/inicio', (req, res, next) => {
+    res.render('principal.ejs');
+})
+
 //Cliente y trabajador logins
 router1.get('/login_trabajador', (req, res, next) => {
     res.render('index_login_trabajador.ejs');
