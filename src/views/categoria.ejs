@@ -1,0 +1,29 @@
+<%- include('../views/layouts/main_cliente.ejs'); %>
+<div>
+  <div class="contenedorbusqueda">
+    <form action="/resultado" method="GET">
+      <input type="text" name="search" class="campotextcateg" placeholder="Ingresa tu busqueda...">
+      <button type="submit" class="btn btn-primary btn-me2">Buscar</button>
+    </form>
+  </div>
+  <div class="contendorcateg">
+    <h1 class="tituloGrande ">
+      SUGERENCIAS
+    </h1>
+      <p class="color1parrafo">
+        <b>1.</b> Por favor se especifico con las labores que desea buscar, ya que el sistema aun esta 
+        en desarrollo y en caso de recibir terminos extraños, puede afectar los resultado.
+        <br>
+        <b>2.</b> Por favor no ingresar simbolos, unicamente letras y numeros.
+        <br>
+        <b>3.</b> Si no encuentra el servicio que necesita, por favor notificarlo al correo:
+        <b>mande_labores@gmail.com</b> para que asi sea implementado en futuras implementaciones.
+        <br>
+        <b>4.</b> Si encuentra algun problema o irregularidad, notificarlos al correo: 
+        <b>mande_labores@gmail.com</b>.
+      </P>
+  </div>
+</div>
+<div class="gifload">
+  <img src="cargando.gif" alt="">
+</div>
