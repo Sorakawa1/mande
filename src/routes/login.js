@@ -21,6 +21,7 @@ router1.get('/login_cliente', (req, res, next) => {
     res.render('index_login_clientes.ejs');
 })
 
+
 router1.post('/login_cliente', async(req, res, next) => {
    
     const clientes= await getDataFromAPI(req.body.email);
@@ -71,7 +72,6 @@ async function getDataFromAPI(celtrabajador) {
         console.error(error);
     }
 }
-
 
 
 module.exports = router1;

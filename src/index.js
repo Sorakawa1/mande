@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.static('img'));
 //OPCIONES 
-app.set('port', process.env.PORT || 3004);
+app.set('port', process.env.PORT || 3005);
 app.set('views', path.join(__dirname, 'views')); //ruta de la carpeta de vistas
 app.engine('motor-ejs', engine); //usar motor de plantilla
 app.engine('ejs', engine);
@@ -30,7 +30,7 @@ app.use('/', require('./routes/ventanaprincipal'));
 app.use('/', require('./routes/ventanaprincipaltrabajo'));
 app.use('/', require('./routes/calificaciones'));
 app.use('/', require('./routes/categoria'));
-
+app.use('/', require('./routes/validador_login'));
 
 //EMPIEZA EL SERVIDOR
 app.listen(app.get('port'), () => {

@@ -219,10 +219,10 @@ INSERT INTO cliente_metodo_pago VALUES
 );
 
 create view CLIENTEVIEW as 
-Select nombre,celular, contraseña FROM USUARIO WHERE es_cliente= true;
+Select nombre,celular, contraseña, usuario_activo FROM USUARIO WHERE es_cliente= true;
 
 create view TRABAJADORVIEW as 
-Select nombre,celular, contraseña FROM USUARIO WHERE es_cliente != true;
+Select nombre,celular, contraseña, usuario_activo FROM USUARIO WHERE es_cliente != true;
 
 
 select * from TRABAJADORview;
