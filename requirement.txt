@@ -2,3 +2,4 @@ npm i passport-local
 npm i connect-flash
 npm i ejs-mate  
 npm i underscore
+npm i bcrypt
