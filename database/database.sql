@@ -115,7 +115,7 @@ INSERT INTO usuario VALUES
  'Valeria',
  'Suarez', 
  'vals@gmailcom',
- '123',
+ '$2b$04$p6uTr8ey6xIK4Vso5.ZxYuBm41n9hrtTJ4eAqYKcCQ2BSyfy3NRfG',
  'av 2 n',
  'file:///C:/Users/valeria/Downloads/Segundo%20examen%20parcia.pdf',
  true);
@@ -125,7 +125,7 @@ INSERT INTO usuario VALUES
  'Andres',
  'Perez', 
  'and@gmailcom',
- '568',
+ '$2b$04$p6uTr8ey6xIK4Vso5.ZxYuBm41n9hrtTJ4eAqYKcCQ2BSyfy3NRfG',
  'av roosevelt',
  'file:///C:/Users/valeria/Downloads/Calificaciones%20DSI%20Grupo%2080%202022-2%20-%20Hojas%20de%20ca%CC%81lculo%20de%20Google.pdf',
  false);
@@ -135,7 +135,7 @@ INSERT INTO usuario VALUES
  'Cesar',
  'Molina', 
  'cm@gmailcom',
- 'cali202',
+ '$2b$04$p6uTr8ey6xIK4Vso5.ZxYuBm41n9hrtTJ4eAqYKcCQ2BSyfy3NRfG',
  'crre 26',
  'file:///C:/Users/vSI%20Grupo%2080%202022.pdf',
  false);

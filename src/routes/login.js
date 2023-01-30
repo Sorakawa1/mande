@@ -1,7 +1,7 @@
 // Se encargara de almacenar las rutas principales
 const express = require('express');
 const router1 = express.Router(); //Se definen las rutas del servidor
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 
 //Portal principal
 router1.get('/', (req, res, next) => {
