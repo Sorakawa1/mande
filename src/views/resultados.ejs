@@ -6,10 +6,13 @@
     <div id="resultado">
             <table class="table table-hover">
               <thead>
+                      <br>
+                      <br>
                 <tr>
                   <th></th>
-                  <th></th>
-                  <th></th>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Costo por unidad</th>
                 </tr>
               </thead>
               <tbody>
@@ -17,16 +20,36 @@
                 <tr class="table-primary">
                   <td>
                     <div class="iconoss">
-                      <%= user.nombre %>
+                      <img src="https://www.aprendemas.com/co/blog/images/2021/10/profesor_mal_tips.jpg" width="100" height="100" alt="Texto alternativo">
                     </div>
+                  </td>
+                  <td>
+                    <br>
+                    <br>
+                     <br>
+                    <%= user.nombre + user.apellido %>
                   </td>
                   <td>
                     <div>
-                      <%= user.apellido %>
-                      <p>Aqui va la descripcion</p>
+                      <br>
+                      <br>
+                      <br>
+                      <%= user.nombre_labor %>
+                      <br>
+                      <%= "  " + user.tipo_unidad %>
+                      
                     </div>
                   </td>
                   <td>
+                      <br>
+                      <br>
+                      <br>
+                      <%= user.tarifa %>
+                  </td>
+                  <td>
+                    <br>
+                    <br>
+                    
                     <div class="comentarioalig">
                       <a href="/calificar">
                         <input type="button" class="btn btn-info solicitar" value="Solicitar">
@@ -47,15 +70,4 @@
 </div>
 
 <script>
-  const solicitarBtn = document.querySelectorAll(".solicitar");
-
-  solicitarBtn.forEach(function(btn) {
-    btn.addEventListener("click", function() {
-      const trabajador = this.parentNode.parentNode.parentNode;
-      const nombre = trabajador.querySelector(".iconoss").textContent;
-      const apellido = trabajador.querySelector("td div").firstChild.nextSibling.textContent;
-      console.log("9999999999999999")
-      console.log(nombre, apellido);
-    });
-  });
 </script>
