@@ -16,9 +16,11 @@ const getWorker = async(req,res) => {
     }  
 }
 
+
+
 const getWorkerByCel = async(req,res) => {
     try{ 
-        const rest= await pool.query('SELECT * from TRABAJADORVIEW WHERE celular=$1', [req.params.celular]);
+        const rest= await pool.query('SELECT * from usuario WHERE celular=$1', [req.params.celular]);
         if(rest.rows.length==0){
             res.status(404).json({error:'no se encontro el Worker'});
         }
@@ -129,4 +131,4 @@ const deleteWorker = async(req,res) => {
     }   
 
 
-module.exports = { getWorker, getWorkerByCel, updateWorker, createWorker, deleteWorker };
+module.exports = {getWorker, getWorkerByCel, updateWorker, createWorker, deleteWorker };

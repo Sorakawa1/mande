@@ -23,7 +23,7 @@ const getClient = async(req,res) => {
 //funcion que devuelve un cliente especifico al darle un numero de celular.
 const getClienteByCel = async(req,res) => {
     try{ 
-        const rest= await pool.query('SELECT * from clienteview WHERE celular=$1 AND usuario_activo=true', [req.params.celular]);
+        const rest= await pool.query('SELECT * from usuario WHERE celular=$1 AND usuario_activo=true', [req.params.celular]);
         if(rest.rows.length==0){
             res.status(404).json({error:'no se encontro el cliente'});
         }
