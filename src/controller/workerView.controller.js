@@ -18,8 +18,14 @@ const getWorkerComplete = async(req,res) => {
 
 const getWorkerCompleteByCel = async(req,res) => {
     try{ 
-        const rest= await pool.query('SELECT * from TRABAJADORVIEW WHERE celular=$1', [req.params.celular]);
+        
+        //const query= 'SELECT * from TRABAJADORVIEW WHERE nombre_labor like '+ '%'+ req.params.labores +'%';
+        //console.log('resultadooo:'+query);
+        const rest= await pool.query('SELECT * from TRABAJADORVIEW WHERE nombre_labor like $1', ['%'+ req.params.labores +'%']);
+        //const rest= await pool.query(query);
+        
         if(rest.rows.length==0){
+            
             res.status(404).json({error:'no se encontro el Worker'});
         }
         else{

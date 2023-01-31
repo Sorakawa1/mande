@@ -8,7 +8,7 @@ const {getWorkerComplete,getWorkerCompleteByCel}= require('../controller/workerV
 router.get('/',getWorkerComplete);
 
 //retorna un trabajador por celular
-router.get('/:celular',getWorkerCompleteByCel);
+router.get('/:labores',getWorkerCompleteByCel);
 
 
 
