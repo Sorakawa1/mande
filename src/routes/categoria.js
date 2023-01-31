@@ -16,6 +16,11 @@ routecateg.get('/resultado', async(req, res, next) => {
     const url= 'http://localhost:5000/api/workerView/'+valor;
     const trabajo= await getDataFromAPI(url);
     console.log(trabajo);
+
+    if(!trabajo.length){
+        res.redirect('/categorias');
+    }
+
     res.render('resultados.ejs', {trabajo});  
 })
 
