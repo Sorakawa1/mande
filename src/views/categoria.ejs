@@ -2,7 +2,17 @@
 <div>
   <div class="contenedorbusqueda">
     <form action="/resultado" method="GET">
-      <input type="text" name="search" class="campotextcateg" placeholder="Ingresa tu busqueda...">
+      <input list="browsers" type="browsers" name="buscar" class="campotextcateg" placeholder="Ingresa tu busqueda..."/>
+      <datalist id="browsers">
+        <option value="Contador">
+        <option value="Analista de nomina">
+        <option value="Auxiliar en sistemas">
+        <option value="Auxiliar en desarrollo web">
+        <option value="Cocinero">
+        <option value="Aseo general">
+        <option value="Auxiliar de enfermeria">
+        <option value="Pediatra">
+      </datalist>
       <button type="submit" class="btn btn-primary btn-me2">Buscar</button>
     </form>
   </div>
