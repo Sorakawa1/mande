@@ -219,10 +219,12 @@ INSERT INTO servicio VALUES
 create view CLIENTEVIEW as 
 Select nombre,celular, contrasena FROM USUARIO WHERE es_cliente= true AND usuario_activo = true;
 
-create view TRABAJADORVIEW as 
-Select nombre,celular, contrasena FROM USUARIO WHERE es_cliente != true AND usuario_activo = true;
-
-UPDATE usuario set usuario_activo=true where celular='3167895779';
-select * from usuario;
+create view trabajadorview as
+	SELECT usuario.celular,usuario.contrasena,usuario.nombre, usuario.apellido,trabajador.foto,trabajador.cedula_trabajador,trabajador.calificacion,ofrece.tarifa, labor.nombre as nombre_labor,tipo_unidad
+	FROM usuario
+	JOIN trabajador ON usuario.celular = trabajador.celular_trabajador
+	JOIN ofrece on trabajador.cedula_trabajador= ofrece.trabajador_id
+	JOIN labor on ofrece.labor_id= labor.labor_id
+	where usuario.usuario_activo=true;
 
 select * from TRABAJADORview;
