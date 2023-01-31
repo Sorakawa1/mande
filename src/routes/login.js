@@ -64,7 +64,7 @@ router1.post('/login_trabajador', async(req, res, next) => {
             const cel= req.body.email;
             res.cookie('usuario', cel , {maxAge: 900000, httpOnly: true}	);
             //console.log(req.cookies);
-            res.redirect('perfil_trabajo');
+            res.redirect('/venta_trabajo_inici');
             
         }
         else    {
@@ -110,7 +110,7 @@ router1.post('/login_cliente', async(req, res, next) => {
             const cel= req.body.email;
             res.cookie('usuario', cel , {maxAge: 900000, httpOnly: true}	);
             //console.log(req.cookies);
-            res.redirect('/perfil_cliente');
+            res.redirect('/venta_cliente_inicio');
         }
         else    {
             console.log('datos incorrectos-contraseña-usuario');

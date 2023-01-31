@@ -3,34 +3,38 @@
     <div>
         <h1 class="tituloGrande">Registro Trabajador</h1>
     </div>
-    <form action="/registrar_trabajador" method="POST">
+    <form action="/registrar_trabajador" method="post">
         <div class="camposdatostrab">
             <div>
-                <input type="text" name="nombre_cliente" placeholder="Nombre/s" id="center" class="campotext1"/>
+                <input type="text" name="nombre" placeholder="Nombre/s" id="center" class="campotextlog"/>
             </div>
-
+            
             <div class="espaciobotones">
-                <input type="text" name="apellido_cliente" placeholder="Apellido/s" id="center" class="campotext1"/>
+                <input type="text" name="apellido" placeholder="Apellido/s" id="center" class="campotextlog"/>
             </div>
-
+            
             <div class="espaciobotones">
-                <input type="email" name="email" placeholder="Correo Electronico" id="center" class="campotext1"/>
+                <input type="email" name="correo" placeholder="Correo Electronico" id="center" class="campotextlog"/>
             </div>
-
+            
             <div class="espaciobotones">
-                <input type="text" name="direccion" placeholder="Direccion" id="center" class="campotext1"/>
+                <input type="password" name="contrasena" placeholder="Contraseña" id="center" class="campotextlog"/>
             </div>
-
+            
             <div class="espaciobotones">
-                <input type="password" name="password" placeholder="Contraseña" id="center" class="campotext1"/>
+                <input type="password" name="contrasena2" placeholder="Confirmar Contraseña" id="center" class="campotextlog"/>
             </div>
-
+    
             <div class="espaciobotones">
-                <input type="password" name="password2" placeholder="Confirmar Contraseña" id="center" class="campotext1"/>
+                <input type="text" name="ubicacion" placeholder="direccion" id="center" class="campotextlog"/>
             </div>
-
+    
             <div class="espaciobotones">
-                <input type="text" name="numero" placeholder="Telefono" id="center" class="campotext1"/>
+                <input type="text" name="cedula" placeholder="numero de documento" id="center" class="campotextlog"/>
+            </div>
+    
+            <div class="espaciobotones">
+                <input type="text" name="celular" placeholder="Telefono" id="center" class="campotextlog"/>
             </div>
             <div class="espaciobotones">
                 <input type="file" class="tamanoboton"/>
