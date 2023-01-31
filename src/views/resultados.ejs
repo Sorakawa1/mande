@@ -29,7 +29,7 @@
                   <td>
                     <div class="comentarioalig">
                       <a href="/calificar">
-                        <input type="button" class="btn btn-info" value="Solicitar">
+                        <input type="button" class="btn btn-info solicitar" value="Solicitar">
                       </a>
                     </div>
                   </td>
@@ -46,3 +46,16 @@
   </div>
 </div>
 
+<script>
+  const solicitarBtn = document.querySelectorAll(".solicitar");
+
+  solicitarBtn.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      const trabajador = this.parentNode.parentNode.parentNode;
+      const nombre = trabajador.querySelector(".iconoss").textContent;
+      const apellido = trabajador.querySelector("td div").firstChild.nextSibling.textContent;
+      console.log("9999999999999999")
+      console.log(nombre, apellido);
+    });
+  });
+</script>
