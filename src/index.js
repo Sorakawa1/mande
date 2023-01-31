@@ -1,4 +1,5 @@
 //CODIGO DE SERVIDOR
+const cookieParser = require("cookie-parser");
 const express = require('express');
 const engine = require('ejs-mate');
 const ejs = require('ejs'); 
@@ -9,8 +10,9 @@ const app = express();
 
 app.use(express.static('public'));
 app.use(express.static('img'));
+app.use(cookieParser());
 //OPCIONES 
-app.set('port', process.env.PORT || 3005);
+app.set('port', process.env.PORT || 3007 );
 app.set('views', path.join(__dirname, 'views')); //ruta de la carpeta de vistas
 app.engine('motor-ejs', engine); //usar motor de plantilla
 app.engine('ejs', engine);

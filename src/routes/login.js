@@ -2,23 +2,45 @@
 const express = require('express');
 const router1 = express.Router(); //Se definen las rutas del servidor
 const bcrypt = require('bcrypt');
+var usuariosLog =[];
 
 //Portal principal
 router1.get('/', (req, res, next) => {
+    res.cookie('usuario',"0", {maxAge: 0, httpOnly: true});
+    console.log("aqui deberia borrar los cookies")
+    console.log(req.cookies.usuario);
+    const celularesActivos = usuariosLog.filter(celular => celular != req.cookies.usuario);
+    console.log("celularesactivos:")
+    console.log(req.celularesActivos);
+
+    usuariosLog=celularesActivos;
     res.render('principal.ejs');
 })
 
 router1.get('/inicio', (req, res, next) => {
+    res.cookie('usuario',"0", {maxAge: 0, httpOnly: true});
+    console.log("aqui deberia borrar los cookies")
+    console.log(req.cookies.usuario);
+    const celularesActivos = usuariosLog.filter(celular => celular != req.cookies.usuario);
+    console.log("celularesactivos:")
+    console.log(req.celularesActivos);
+
+    usuariosLog=celularesActivos;
     res.render('principal.ejs');
 })
 
 router1.get('/login_trabajador', (req, res, next) => {
+    res.cookie('usuario',"0", {maxAge: 0, httpOnly: true});
+    console.log("cookies:"+req.cookies.usuario);
+    console.log("celularesactivos:")
+    console.log(req.celularesActivos);
     res.render('index_login_trabajador.ejs');
 })
 
 
 //Cliente y trabajador logins
 router1.post('/login_trabajador', async(req, res, next) => {
+
     const url= 'http://localhost:5000/api/worker/'+req.body.email;
     const clientes= await getDataFromAPI(url);
     const key = 'error';
@@ -26,7 +48,7 @@ router1.post('/login_trabajador', async(req, res, next) => {
 
     if(hasKey || !req.body.email|| !req.body.password){
         console.log('datos incorrectos');
-        res.render('index_login_trabajador.ejs');
+        res.redirect('/login_trabajador');
     }
     else
     { 
@@ -36,11 +58,19 @@ router1.post('/login_trabajador', async(req, res, next) => {
 
         if(rehash)
         {
-            res.render('venta_principal_trabajo.ejs');
+            usuariosLog.push(req.body.email);
+            console.log(usuariosLog);
+            const cel= req.body.email;
+
+            console.log("los cookies aqui son:")
+            res.cookie('usuario', cel , {maxAge: 900000, httpOnly: true}	);
+            console.log(req.cookies.usuario)
+            res.redirect('/venta_trabajo_inici');
+            
         }
         else    {
             console.log('datos incorrectos-contraseña-usuario');
-            res.render('index_login_trabajador.ejs');
+            res.redirect('/login_trabajador');
         }
     }
     
@@ -48,6 +78,10 @@ router1.post('/login_trabajador', async(req, res, next) => {
 
 
 router1.get('/login_cliente', (req, res, next) => {
+    res.cookie('usuario',"0", {maxAge: 0, httpOnly: true});
+    console.log("cookies:"+req.cookies.usuario);
+    console.log("celularesactivos:")
+    console.log(req.celularesActivos);
     res.render('index_login_clientes.ejs');
 })
 
@@ -60,7 +94,7 @@ router1.post('/login_cliente', async(req, res, next) => {
 
     if(hasKey || !req.body.email|| !req.body.password){
         console.log('datos incorrectos');
-        res.render('index_login_clientes.ejs');
+        res.redirect('/login_cliente');
     }
     else
     { 
@@ -70,11 +104,18 @@ router1.post('/login_cliente', async(req, res, next) => {
 
         if(rehash)
         {
-            res.render('perfil_cliente.ejs');
+            usuariosLog.push(req.body.email);
+            console.log(usuariosLog);
+            const cel= req.body.email;
+
+            console.log("los cookies aqui son:")
+            res.cookie('usuario', cel , {maxAge: 900000, httpOnly: true}	);
+            console.log(req.cookies.usuario)
+            res.redirect('/venta_cliente_inicio');
         }
         else    {
             console.log('datos incorrectos-contraseña-usuario');
-            res.render('index_login_clientes.ejs');
+            res.redirect('/login_cliente');
         }
     }
     
@@ -93,4 +134,4 @@ async function getDataFromAPI(url) {
 
 
 
-module.exports = router1;
+module.exports = router1,usuariosLog;
