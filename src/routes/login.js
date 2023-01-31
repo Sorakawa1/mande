@@ -42,37 +42,37 @@ router1.get('/login_trabajador', (req, res, next) => {
 router1.post('/login_trabajador', async(req, res, next) => {
 
     const url= 'http://localhost:5000/api/worker/'+req.body.email;
-    const clientes= await getDataFromAPI(url);
+    const trabajadores= await getDataFromAPI(url);
+    console.log(trabajadores);
     const key = 'error';
-    var hasKey = (clientes[key] !== undefined);
+    var hasKey = (trabajadores[key] !== undefined);
 
     if(hasKey || !req.body.email|| !req.body.password){
         console.log('datos incorrectos');
-        res.redirect('/login_trabajador');
+        res.render('index_login_trabajador.ejs');
     }
     else
     { 
         const hash= (req.body.password);
-        const contrasena=(clientes[0].contrasena).toString().trim();
+        const contrasena=(trabajadores[0].contrasena).toString().trim();
         const rehash= await bcrypt.compare(hash,contrasena);
 
         if(rehash)
         {
-            usuariosLog.push(req.body.email);
-            console.log(usuariosLog);
+            // usuariosLog.push(req.body.email);
+            //console.log(usuariosLog);
             const cel= req.body.email;
-
-            console.log("los cookies aqui son:")
             res.cookie('usuario', cel , {maxAge: 900000, httpOnly: true}	);
-            console.log(req.cookies.usuario)
-            res.redirect('/venta_trabajo_inici');
+            //console.log(req.cookies);
+            res.redirect('perfil_trabajo');
             
         }
         else    {
             console.log('datos incorrectos-contraseña-usuario');
-            res.redirect('/login_trabajador');
+            res.render('index_login_trabajador.ejs');
         }
     }
+    
     
 })
 
@@ -89,12 +89,13 @@ router1.post('/login_cliente', async(req, res, next) => {
    
     const url= 'http://localhost:5000/api/client/'+req.body.email;
     const clientes= await getDataFromAPI(url);
+    
     const key = 'error';
     var hasKey = (clientes[key] !== undefined);
 
     if(hasKey || !req.body.email|| !req.body.password){
         console.log('datos incorrectos');
-        res.redirect('/login_cliente');
+        res.render('index_login_clientes.ejs');
     }
     else
     { 
@@ -104,18 +105,16 @@ router1.post('/login_cliente', async(req, res, next) => {
 
         if(rehash)
         {
-            usuariosLog.push(req.body.email);
-            console.log(usuariosLog);
+           // usuariosLog.push(req.body.email);
+            //console.log(usuariosLog);
             const cel= req.body.email;
-
-            console.log("los cookies aqui son:")
             res.cookie('usuario', cel , {maxAge: 900000, httpOnly: true}	);
-            console.log(req.cookies.usuario)
-            res.redirect('/venta_cliente_inicio');
+            //console.log(req.cookies);
+            res.redirect('/perfil_cliente');
         }
         else    {
             console.log('datos incorrectos-contraseña-usuario');
-            res.redirect('/login_cliente');
+            res.render('index_login_clientes.ejs');
         }
     }
     
