@@ -50,7 +50,7 @@ la base de datos.
 ### INICIO:
 **Primero**, debe clonar la rama del FRONT y también la del BACK en carpetas diferentes, ya que cada una se ejecuta sobre un puerto distinto.
 
-**Segundo**, tener instalado POSTGRESQL y para un mejor manejo pgAdmin4.
+**Segundo**, tener instalado POSTGRESQL 
 
 **Tercero**, se deben instalar las dependencias registradas en el package.json junto al modulo de **npm**.
 El comando para instalar componentes seria: 
@@ -59,7 +59,9 @@ El comando para instalar componentes seria:
 **Cuarto**, ejecutar el servidor, para este caso puede usar la instrucción: **npm run ini.**
 En navegador entramos a la siguiente ruta: http://localhost:3007 para el Front y el  http://localhost:5000 para el BACK.
 
-**Quinto**, aparir de esto, ya podrá ingresar al sistema para hacer un registro o login, ademas podrá realizar consultar a la base de datos por medio de la API del back, ejemplo:
+**Quinto**, instalar la base datos (el archivo psql que se encuentra dentro de la rama back o front (ambos son iguales)
+
+**Sexto**, aparir de esto, ya podrá ingresar al sistema para hacer un registro o login, ademas podrá realizar consultar a la base de datos por medio de la API del back, ejemplo:
 
 FRONT: http://localhost:3007/login_cliente = Los llevara directamente a la ventana de Login de clientes.
 
