@@ -8,11 +8,12 @@
               <thead>
                       <br>
                       <br>
-                <tr>
+                <tr class="table-info">
                   <th></th>
                   <th>Nombre</th>
                   <th>Descripción</th>
-                  <th>Costo por unidad</th>
+                  <th>Costo del servicio</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -24,33 +25,24 @@
                     </div>
                   </td>
                   <td>
-                    <br>
-                    <br>
-                     <br>
-                    <%= user.nombre + user.apellido %>
+                    <p class="textotabla2"><b><%= user.nombre %><%= user.apellido %></b>
+                      <br>
+                    <%= user.celular %></p>
                   </td>
                   <td>
                     <div>
-                      <br>
-                      <br>
-                      <br>
-                      <%= user.nombre_labor %>
-                      <br>
-                      <%= "  " + user.tipo_unidad %>
-                      
+                      <p class="textotabla3"><b><%= user.nombre_labor %></b></p>
+                      <p class="textotabla4"><%= user.tipo_unidad %></p>
                     </div>
                   </td>
                   <td>
-                      <br>
-                      <br>
-                      <br>
-                      <%= user.tarifa %>
+                      <p class="textotabla"><%= user.tarifa %></p>
                   </td>
                   <td>
                     <br>
                     <br>
                     
-                    <div class="comentarioalig">
+                    <div class="aligboton">
                       <a href="/calificar">
                         <input type="button" class="btn btn-info solicitar" value="Solicitar">
                       </a>

@@ -3,7 +3,11 @@ const express = require('express');
 const routecalif = express.Router(); //Se definen las rutas del servidor
 
 //Registro Trabajador
-routecalif.get('/calificar', (req, res, next) => {
+routecalif.get('/calificar', async (req, res, next) => {
+    const response = await fetch('http://localhost:5000/api/worker/3226256925', {
+  method: "DELETE"});
+  const response2 = await fetch('http://localhost:5000/api/servicio', {
+  method: "POST"});
     res.render('calificacion.ejs');  
 })
 

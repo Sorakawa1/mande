@@ -34,6 +34,7 @@ app.use('/', require('./routes/ventanaprincipaltrabajo'));
 app.use('/', require('./routes/calificaciones'));
 app.use('/', require('./routes/categoria'));
 app.use('/', require('./routes/validador_login'));
+app.use('/', require('./routes/pedidos'));
 
 //EMPIEZA EL SERVIDOR
 app.listen(app.get('port'), () => {

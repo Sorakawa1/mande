@@ -193,7 +193,7 @@ body{
 }
 
 .iconoss{
-  padding-top: 25%;
+  padding-top: 5%;
   text-align: center;
 }
 
@@ -232,6 +232,42 @@ body{
   margin-top: 0.5em;
 }
 
+.aligboton{
+  text-align: center;
+  margin-top: -10%;
+}	
+
+.textotabla{
+  color: #405a8a;
+  font-size: 1.8em;
+  padding-top: 10%;
+  width: 33%;
+  margin-left: 0.4em;
+}	
+.textotabla2{
+  color: #405a8a;
+  font-size: 1em;
+  padding-top: 8%;
+  width: 33%;
+  margin-left: 0.4em;
+}	
+
+.textotabla3{
+  color: #405a8a;
+  font-size: 1em;
+  padding-top: 5%;
+  width: 50%;
+  margin-left: 0.4em;
+}	
+
+.textotabla4{
+  color: #405a8a;
+  font-size: 1.1em;
+  padding-top: 0%;
+  width: 50%;
+  margin-left: 0.4em;
+}	
+
 .distancia{
   width: 37em;
   height: 3.5em;
@@ -251,6 +287,9 @@ body{
   color: rgb(76, 0, 255);
 }
 
+.tituloreseña:hover{
+  color: #55e429;
+}
 .btn-me2:hover{
   background-color: #d18a20;
   color: rgb(187, 255, 0);
@@ -346,4 +385,3 @@ body{
   color: rgb(53, 147, 255);
   font-size: 3em;
 }
-
