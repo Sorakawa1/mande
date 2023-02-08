@@ -12,7 +12,7 @@ CREATE TABLE usuario
     nombre character(100),
     apellido character(100),
     correo character(100),
-    contraseña character(100),
+    contrasena character(100),
     ubicacion character(100), 
     doc_ruta varchar NOT NULL,
     es_cliente boolean,
@@ -64,7 +64,8 @@ CREATE TABLE metodo_pago
 );
 
 CREATE TABLE cliente_metodo_pago
-( cliente_id int,
+( cliente_metodo_pago_id serial PRIMARY KEY,
+  cliente_id int,
   CONSTRAINT fk_cliente_metodo
   FOREIGN KEY (cliente_id)
   REFERENCES cliente(cedula_cliente),
@@ -81,10 +82,10 @@ CREATE TABLE pago
    CONSTRAINT fk_pago_trabajador 
    FOREIGN KEY (trabajador_id) 
    REFERENCES trabajador(cedula_trabajador),
-   metodo_pago serial,
+   cliente_metodo_pago_id serial,
    CONSTRAINT fk_metodo_pago_cliente
-   FOREIGN KEY (metodo_pago)
-   REFERENCES metodo_pago(metodo_id),
+   FOREIGN KEY (cliente_metodo_pago_id)
+   REFERENCES cliente_metodo_pago(cliente_metodo_pago_id),
    pagado boolean DEFAULT false
 );
 
@@ -98,10 +99,6 @@ CREATE TABLE servicio
     CONSTRAINT fk_servicio_pago
     FOREIGN KEY (pago)
     REFERENCES pago(pago_id),
-    cliente_id int NOT NULL,
-    CONSTRAINT fk_servicio_cliente
-    FOREIGN KEY (cliente_id)
-    REFERENCES cliente(cedula_cliente),
     ofrece_id serial NOT NULL,
     CONSTRAINT fk_servicio_ofrece
     FOREIGN KEY (ofrece_id)
@@ -194,11 +191,18 @@ INSERT INTO metodo_pago VALUES
   'TARJETA DEBITO'
 );
 
+
+INSERT INTO cliente_metodo_pago VALUES
+( 1,
+  1006052790,
+  2
+);
+
 INSERT INTO pago VALUES
 (  1,
    CURRENT_TIMESTAMP,
    31941307,
-   2
+   1
 );
 
 INSERT INTO servicio VALUES
@@ -208,21 +212,19 @@ INSERT INTO servicio VALUES
     100000,
     20000,
     1,
-    1006052790,
     1,	
     4
 );
 
-INSERT INTO cliente_metodo_pago VALUES
-( 1006052790,
-  2
-);
-
 create view CLIENTEVIEW as 
-Select nombre,celular, contraseña FROM USUARIO WHERE es_cliente= true;
+Select nombre,celular, contrasena FROM USUARIO WHERE es_cliente= true AND usuario_activo = true;
 
-create view TRABAJADORVIEW as 
-Select nombre,celular, contraseña FROM USUARIO WHERE es_cliente != true;
-
+create view trabajadorview as
+	SELECT usuario.celular,usuario.contrasena,usuario.nombre, usuario.apellido,trabajador.foto,trabajador.cedula_trabajador,trabajador.calificacion,ofrece.tarifa, labor.nombre as nombre_labor,tipo_unidad
+	FROM usuario
+	JOIN trabajador ON usuario.celular = trabajador.celular_trabajador
+	JOIN ofrece on trabajador.cedula_trabajador= ofrece.trabajador_id
+	JOIN labor on ofrece.labor_id= labor.labor_id
+	where usuario.usuario_activo=true;
 
 select * from TRABAJADORview;
